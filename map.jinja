@@ -1,0 +1,15 @@
+# -*- coding: utf-8 -*-
+# vim: ft=jinja
+
+{%- import_yaml "libnss/defaults.yaml" as default_settings %}
+
+{%- set os_family_map = salt['grains.filter_by']({
+    'Debian': {},
+    'Suse': {},
+    'RedHat': {},
+}, grain="os_family", merge=salt['pillar.get']('libnss:lookup')) %}
+
+{%- do default_settings.libnss.update(os_family_map) %}
+
+{%- set libnss = salt['pillar.get']('libnss', default=default_settings.libnss, merge=True) %}
+

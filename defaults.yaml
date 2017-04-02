@@ -1,0 +1,6 @@
+libnss:
+  mysql:
+    pkg: libnss-mysql
+    user_config: /etc/libnss-mysql.cfg
+    root_config: /etc/libnss-mysql-root.cfg
+
