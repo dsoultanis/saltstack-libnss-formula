@@ -1,4 +1,6 @@
 libnss:
+  nsswitch:
+    config: /etc/nsswitch.conf
   mysql:
     pkg: libnss-mysql
     user_config: /etc/libnss-mysql.cfg
