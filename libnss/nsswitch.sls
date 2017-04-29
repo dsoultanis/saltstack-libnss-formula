@@ -2,7 +2,7 @@
 
 libnss-nsswitch-config:
   file.managed:
-  - name: {{ libnss.nsswitch.config }}
+  - name: {{ libnss.nsswitch.lookup.config }}
   - source: salt://libnss/files/nsswitch.conf
   - template: jinja
   - context:

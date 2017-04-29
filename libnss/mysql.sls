@@ -2,11 +2,11 @@
 
 libnss-mysql-pkg:
   pkg.installed:
-  - name: {{ libnss.mysql.pkg }}
+  - name: {{ libnss.mysql.lookup.pkg }}
 
 libnss-mysql-config-user:
   file.managed:
-  - name: {{ libnss.mysql.user_config }}
+  - name: {{ libnss.mysql.lookup.user_config }}
   - source: salt://libnss/files/libnss-mysql.cfg
   - template: jinja
   - context:
@@ -16,7 +16,7 @@ libnss-mysql-config-user:
 
 libnss-mysql-config-root:
   file.managed:
-  - name: {{ libnss.mysql.root_config }}
+  - name: {{ libnss.mysql.lookup.root_config }}
   - source: salt://libnss/files/libnss-mysql.cfg
   - template: jinja
   - context:
