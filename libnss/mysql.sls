@@ -10,7 +10,7 @@ libnss-mysql-config-user:
   - source: salt://libnss/files/libnss-mysql.cfg
   - template: jinja
   - context:
-      config: {{ salt['pillar.get']('libnss:config:mysql:user', {}) }}
+      config: {{ libnss.config.mysql.user }}
   - require:
     - pkg: libnss-mysql-pkg
 
@@ -20,7 +20,7 @@ libnss-mysql-config-root:
   - source: salt://libnss/files/libnss-mysql.cfg
   - template: jinja
   - context:
-      config: {{ salt['pillar.get']('libnss:config:mysql:root', {}) }}
+      config: {{ libnss.config.mysql.root }}
   - require:
     - pkg: libnss-mysql-pkg
 

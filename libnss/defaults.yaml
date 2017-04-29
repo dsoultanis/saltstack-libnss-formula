@@ -46,3 +46,6 @@ libnss:
       aliases:
       - files
       - nisplus
+    mysql:
+      user: {}
+      root: {}

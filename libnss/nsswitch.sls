@@ -6,4 +6,4 @@ libnss-nsswitch-config:
   - source: salt://libnss/files/nsswitch.conf
   - template: jinja
   - context:
-      config: {{ salt['pillar.get']('libnss:config:nsswitch', {}) }}
+      config: {{ libnss.config.nsswitch }}
