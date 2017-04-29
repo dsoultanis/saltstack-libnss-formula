@@ -2,8 +2,8 @@
 
 libnss-nsswitch-config:
   file.managed:
-  - name: {{ libnss.nsswitch.lookup.config }}
+  - name: {{ libnss.lookup.nsswitch.config }}
   - source: salt://libnss/files/nsswitch.conf
   - template: jinja
   - context:
-      config: {{ salt['pillar.get']('libnss:nsswitch:config', {}) }}
+      config: {{ salt['pillar.get']('libnss:config:nsswitch', {}) }}
