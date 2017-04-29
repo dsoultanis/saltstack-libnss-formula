@@ -6,4 +6,43 @@ libnss:
       pkg: libnss-mysql
       user_config: /etc/libnss-mysql.cfg
       root_config: /etc/libnss-mysql-root.cfg
-
+  config:
+    nsswitch:
+      passwd:
+      - files
+      - sss
+      shadow:
+      - files
+      - sss
+      group:
+      - files
+      - sss
+      hosts:
+      - files
+      - dns
+      - myhostname
+      bootparams:
+      - nisplus
+      - '[NOTFOUND=return]'
+      - files
+      ethers:
+      - files
+      netmasks:
+      - files
+      networks:
+      - files
+      protocols:
+      - files
+      rpc:
+      - files
+      services:
+      - files
+      - sss
+      publickey:
+      - nisplus
+      automount:
+      - files
+      - nisplus
+      aliases:
+      - files
+      - nisplus
